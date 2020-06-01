@@ -35,3 +35,12 @@ export default function Home({ allPostsData }) {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
